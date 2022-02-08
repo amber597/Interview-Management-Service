@@ -1,0 +1,30 @@
+.form-field {
+    text-align: center;
+    width: 100%;
+}
+mat-form-field {
+    width: 60%;
+}
+.not-entered {
+    color: red;
+}
+.stream-table {
+    width: 60%;
+    position: relative;
+    left: 20%;
+}
+.stream {
+    width: 60%;
+    position: relative;
+    left: 20%;
+}
+.stream mat-form-field {
+    width: 40%;
+    margin: 5%;
+}
+.addStreamButton {
+    background: #263238;
+    color: whitesmoke;
+    
+    
+}

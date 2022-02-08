@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div class="row">
+    <div class="form-div my-4 col-12">
+      <mat-card >
+        <form action="" class="form" (ngSubmit)='onSubmit()'>
+          <div class="container">
+            <div class="row text-center">
+              <div class="form-field">
+                <mat-form-field appearance="fill">
+                  <mat-label>Candidate Name</mat-label>
+                  <input required name="candidateName" matInput [(ngModel)] = 'addCandidate.candidateName'>
+                </mat-form-field>
+                <p class="not-entered" *ngIf='candidateNameChecker'>Enter Candidate Name</p>
+              </div>
+              <div class="form-field">
+                <mat-form-field appearance="fill">
+                  <mat-label>Experience</mat-label>
+                  <input required name="experience" type="number" matInput [(ngModel)] = 'addCandidate.candidateExperience'>
+                </mat-form-field>
+                <p class="not-entered" *ngIf='candidateExperienceChecker'>Enter Experience</p>
+              </div>
+              <div class="form-field">
+                <mat-form-field appearance="fill">
+                  <mat-label>Select Stream</mat-label>
+                  <mat-select required name="stream" [(value)] = 'addCandidate.streamId'>
+                    <mat-option *ngFor = 'let stream of streams' value={{stream.id}} >{{stream.streamName}} </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <p class="not-entered" *ngIf='candidateStreamChecker'>Select Stream</p>
+              </div>
+              <div class="form-field my-3">
+                <button mat-raised-button type="submit" color="primary" class="mx-2">Submit</button>
+                <button mat-raised-button type="reset" color="accent">Reset</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

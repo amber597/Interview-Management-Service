@@ -1,0 +1,53 @@
+<div class="cardContainer"> 
+    <mat-card>
+        <mat-card-title-group >
+            <mat-card-title>User info</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content *ngIf = 'user'>Username : {{user.userName}}</mat-card-content>
+    </mat-card>
+    </div>
+    
+    <div class="formCard">
+        <mat-card>
+    <div class="formContainer">
+        
+        <div class="formField">
+        <mat-form-field appearance="fill">
+            <mat-label>User Role</mat-label>
+            <mat-select  [(value)]='level' >
+              <mat-option value="hr">Human Resources Manager</mat-option>
+              <mat-option value="panel">Panel Member</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+    
+        <div class="formField" *ngIf = 'level == "panel"'>
+          <mat-form-field appearance="fill">
+            <mat-label>Division</mat-label>
+            <mat-select [(value)] = 'panelType'>
+              <mat-option value="manager">Managerial</mat-option>
+              <mat-option value="tech">Technical</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+    
+        <div class="formField" *ngIf = 'panelType == "tech"'>
+            <mat-form-field appearance="fill">
+                <mat-label>Streams</mat-label>
+                <mat-select [formControl]='streams' multiple >
+                  <mat-option *ngFor="let stream of streamList" [value]='stream.id'>{{stream.streamName}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    
+        
+    
+    </div>
+    <div *ngIf = 'errorMessage.length!=0'>
+        <p style="color: red;">Please Select {{errorMessage}}</p>
+    </div>
+    <div>
+        <button mat-raised-button type="Submit" color="primary" (click) = 'onSubmit()'>Assign</button>
+    </div>
+    </mat-card>
+    </div>

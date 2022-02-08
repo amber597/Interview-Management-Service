@@ -1,0 +1,12 @@
+
+.spacer {
+    flex: 1 1 auto;
+}
+.nav-right {
+    width: 80px;
+}
+
+.mat-toolbar.mat-warm {
+    background: #263238;
+    color: #fff;
+  }

@@ -1,0 +1,28 @@
+<mat-toolbar color="warm" class="nav-bar">
+    <span> <a mat-icon-button routerLink='/'> Home</a></span>
+    <span class="mx-3" *ngIf="isLoggedin() && projects!=null">
+        <button mat-button [matMenuTriggerFor]="menu" *ngIf = 'isHr()'>
+            Projects
+        </button>
+        <mat-menu #menu="matMenu" >
+            <button mat-menu-item *ngFor = 'let project of projects' [routerLink] = "['/project', project.id]" routerLinkActive=true>{{project.projectName}}</button>
+        </mat-menu>
+    </span>
+    <span *ngIf="isLoggedin() && isHr()" >
+        <button mat-button routerLink = '/addProject'>
+            Add Project
+        </button>
+    </span>
+    <span *ngIf="isLoggedin() && isHr()" >
+        <button mat-button routerLink = '/report'>
+            Panel
+        </button>
+    </span>
+    <span class="spacer"></span>
+    <a class="nav-right" *ngIf="!isLoggedin()" mat-icon-button routerLink='/login'> Login</a>
+    <a class="nav-right" *ngIf="isLoggedin()" mat-icon-button>{{userName}}</a>
+    <a class="nav-right" *ngIf="isLoggedin()" mat-icon-button (click)='logoutUser()'> Logout</a>
+
+</mat-toolbar>
+
+

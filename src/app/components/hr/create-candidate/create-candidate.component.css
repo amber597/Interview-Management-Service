@@ -1,0 +1,10 @@
+.form-field {
+    text-align: center;
+    width: 100%;
+}
+mat-form-field {
+    width: 60%;
+}
+.not-entered {
+    color: red;
+}

@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+}
+.mat-header-cell {
+    background: #263238;
+    color: whitesmoke;
+    font-size: 0.9em;
+    
+}
+
+.rejected{
+    background-color: #f0d4d5;
+}
+.selected{
+    background-color:  #C1CFC0 ;
+}
+.allocated{
+    background-color: #93B5C6 ;
+}
+.mat-cell {
+    color: black ;  
+}
+
+.allocateButton{
+    margin-top: 20px;
+    display: flex;
+  justify-content: center;
+}
+
+.button{
+    background: #263238;
+    color: whitesmoke;
+}

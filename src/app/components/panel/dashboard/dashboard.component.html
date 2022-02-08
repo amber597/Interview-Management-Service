@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="table mt-5 col-12">
+          <ims-filter [inputList] = 'pendingCandidates' (searchClicked)='onSearch($event)'></ims-filter>
+
+
+          <mat-paginator *ngIf="filteredCandidates" [length] = "filteredCandidates.length"
+                          [pageSize] = "5"
+                        [pageSizeOptions] = "[5, 10, 20]" showFirstLastButtons
+                        (page) = "onPageChange($event)"></mat-paginator>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="No">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let candidate; index as i"> {{i+1}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let candidate"><a [routerLink]="['/candidate',candidate.candidateId]">{{candidate.candidateName}}</a>  </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="projectName">
+      <th mat-header-cell *matHeaderCellDef> Project Name </th>
+      <td mat-cell *matCellDef="let candidate"> {{candidate.project.projectName}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="stream">
+      <th mat-header-cell *matHeaderCellDef> Stream </th>
+      <td mat-cell *matCellDef="let candidate"> {{candidate.stream.streamName}} </td>
+    </ng-container>
+    
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
+</div>
+</div>

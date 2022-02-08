@@ -1,0 +1,33 @@
+
+<form action="" >
+    <mat-form-field class="example-full-width" appearance="fill" *ngIf = 'isTypeName()'>
+        <mat-label>Candidate Name</mat-label>
+        <input matInput placeholder="Name" name="candidateName" [(ngModel)] = 'name'>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill" *ngIf = 'isTypeProject()'>
+        <mat-label>Project</mat-label>
+        <mat-select matNativeControl required [(value)] = 'projectId' *ngIf="projects">
+            <mat-option *ngFor = 'let project of projects' [value]="project.id" >{{project.projectName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill" *ngIf = 'isTypeStream()'>
+        <mat-label>Stream</mat-label>
+        <mat-select matNativeControl required [(value)] = 'streamId' *ngIf="streams" >
+            <mat-option *ngFor = 'let stream of streams' [value]="stream.id" >{{stream.streamName}}</mat-option>
+          </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <mat-select matNativeControl required [(value)] = 'type' >
+          <mat-option value="name">Name</mat-option>
+          <mat-option value="project">Projects</mat-option>
+          <mat-option value="stream">Streams</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-button color="primary" (click) = 'onSearch()'>Search</button>
+</form>

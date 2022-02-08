@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+}
+
+.mat-header-cell {
+    background: #263238;
+    color: whitesmoke;
+    font-size: 0.9em;
+    
+}
+
+.button{
+    background: #263238;
+    color: whitesmoke;
+}
+.allocateButton{
+    margin-top: 20px;
+    display: flex;
+  justify-content: center;
+}
+
+.rejected{
+    background-color: #f0d4d5;
+}
+.selected{
+    background-color:  #C1CFC0 ;
+}
+.allocated{
+    background-color: #93B5C6 ;
+}
+.mat-cell {
+    color: black ;  
+}
+.cardContainer{
+    margin-top: 10px;
+    display: flex;
+}
+.smallTable{
+    width: 70%;
+    margin-left: 10px;
+    
+}
+.mat-progress-bar {
+    height: 7px;
+    border-radius: 5px;
+  
+  }

@@ -1,0 +1,124 @@
+<!-- <div class="container">
+    
+  <div class="topContainer">
+    <div class="candidateCard">
+      <div *ngIf = 'candidate' class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header"> Candidate Info : </div>
+        <div class="card-body">
+          <p class="card-text"> Candidate Username : {{candidate.candidateName}}</p>
+          <p class="card-text"> Project :  {{candidate.project.projectName}}</p>
+          <p class="card-text"> Stream : {{candidate.stream.streamName}}</p>
+          <p class="card-text"> Experience :  {{candidate.candidateExperience}}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="candidateCard" *ngIf='candidate'>
+      <div  class="card bg-light mb-3" style="max-width: 18rem;" *ngFor = 'let getUser of getUsers()'>
+        <div class="card-header"> Candidate History : </div>
+        <div class="card-body">
+          <p class="card-text"> Interviewed By : {{getUser.userName}}</p>
+          <p class="card-text"> Rating : {{getUser.userScore}}</p>
+          <p class="card-text"> Status : {{getUser.userStatus}}</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+
+    <div class="formContainer">
+        <mat-card class="cardContainer">
+            <mat-card-title > Give your ratings: </mat-card-title>
+            <mat-card-content> </mat-card-content>
+            <form class="example-container" >
+              <div class="rating">
+              <div>
+                <mat-form-field appearance="fill" >
+                  <mat-label>Rating</mat-label>
+                  <input matInput required name="score" type="number" min="1" max="10" [(ngModel)]='score'>
+                </mat-form-field>
+              </div>
+              <div >  
+                <mat-form-field appearance="fill">
+                    <mat-label>Status</mat-label>
+                    <mat-select required name="status" [(value)] = "status">
+                      <mat-option value='selected' >Accepted</mat-option>
+                      <mat-option value='rejected' >Rejected</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+            </div>
+            </form>
+              <div class="example-button-row">
+                
+                <button class="btn" mat-raised-button type="submit" color="primary" (click)='onSubmit()'>Submit</button>
+                <button class="btn" mat-raised-button type="reset" color="accent">Reset</button>
+                
+                
+              </div>
+            </mat-card>
+    </div> -->
+  
+    <div class="row">
+      <div class="col-sm-4" style="margin-left: 10px;margin-top: 10px;">
+      
+          <div *ngIf = 'candidate' class="card bg-light mb-3" style="max-width: 25rem;">
+            <div class="card-header"> Candidate Info : </div>
+            <div class="card-body">
+              <p class="card-text"> Candidate Username : {{candidate.candidateName}}</p>
+              <p class="card-text"> Project :  {{candidate.project.projectName}}</p>
+              <p class="card-text"> Stream : {{candidate.stream.streamName}}</p>
+              <p class="card-text"> Experience :  {{candidate.candidateExperience}}</p>
+            </div>
+          </div>
+        
+      </div>
+
+      <div class="col-sm-5" style="max-width: 25rem;margin-top: 10px;">
+        <mat-card class="cardContainer"  style="max-width: 25rem;" >
+          <mat-card-title > Give your ratings: </mat-card-title>
+          <mat-card-content> </mat-card-content>
+          <form class="example-container" >
+            <div class="rating">
+            <div>
+              <mat-form-field appearance="fill" >
+                <mat-label>Rating</mat-label>
+                <input matInput required name="score" type="number" min="1" max="10" [(ngModel)]='score'>
+              </mat-form-field>
+            </div>
+            <div >  
+              <mat-form-field appearance="fill">
+                  <mat-label>Status</mat-label>
+                  <mat-select required name="status" [(value)] = "status">
+                    <mat-option value='selected' >Accepted</mat-option>
+                    <mat-option value='rejected' >Rejected</mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>
+          </div>
+          </form>
+            <div class="example-button-row">
+              
+              <button class="btn" mat-raised-button type="submit" color="primary" (click)='onSubmit()'>Submit</button>
+              <button class="btn" mat-raised-button type="reset" color="accent">Reset</button>
+              
+              
+            </div>
+          </mat-card>
+      </div>
+
+      <div class="col-sm-3" style="margin-top: 10px;">
+        <div *ngIf='candidate'>
+          <div  class="card bg-light mb-3" style="margin-right: 5px;" *ngFor = 'let getUser of getUsers()'>
+            <div class="card-header"> Candidate History : </div>
+            <div class="card-body">
+              <p class="card-text"> Interviewed By : {{getUser.userName}}</p>
+              <p class="card-text"> Rating : {{getUser.userScore}}</p>
+              <p class="card-text"> Status : {{getUser.userStatus}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
